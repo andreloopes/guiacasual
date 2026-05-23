@@ -4,7 +4,7 @@
   "description": "Interactive Restaurant Guide inspired by NY Times",
   "main": "index.html",
   "scripts": {
-    "dev": "npx -y http-server -p 3000"
+    "dev": "npx -y http-server -p 3000 -c-1"
   },
   "keywords": [],
   "author": "André Lopes",

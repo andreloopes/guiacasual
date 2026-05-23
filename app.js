@@ -11,7 +11,7 @@ const state = {
   showMyPicksOnly: false,
   searchTerm: '',
   activeFilters: {
-    city: ['São Paulo'], // Default to São Paulo to align with the journalist's focus
+    city: [],
     cuisine: [],
     price: [],
     status: []
@@ -415,7 +415,15 @@ function renderListItemHTML(r) {
           <div class="attr-item">${r.neighborhood || r.city}</div>
         </div>
 
-        <p class="item-description">${r.description}</p>
+        <p class="item-description">
+          ${r.description.length > 350 ? `
+            <span class="desc-short">${r.description.substring(0, 350)}...</span>
+            <span class="desc-full hidden">${r.description}</span>
+            <button class="read-more-btn" onclick="toggleReadMore(${r.rank}, this)">Leia mais</button>
+          ` : `
+            <span>${r.description}</span>
+          `}
+        </p>
 
         <!-- Custom Checkboxes -->
         <div class="item-check-panel">
@@ -590,6 +598,23 @@ window.openDetailModal = function(rank) {
 
 window.closeDetailModal = function() {
   elements.detailDialog.close();
+};
+
+window.toggleReadMore = function(rank, btn) {
+  const parent = btn.closest('.item-description');
+  const shortEl = parent.querySelector('.desc-short');
+  const fullEl = parent.querySelector('.desc-full');
+  const isCollapsed = fullEl.classList.contains('hidden');
+  
+  if (isCollapsed) {
+    shortEl.classList.add('hidden');
+    fullEl.classList.remove('hidden');
+    btn.textContent = 'Leia menos';
+  } else {
+    shortEl.classList.remove('hidden');
+    fullEl.classList.add('hidden');
+    btn.textContent = 'Leia mais';
+  }
 };
 
 // ==========================================================================

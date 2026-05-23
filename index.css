@@ -610,6 +610,12 @@ body {
 @media (min-width: 768px) {
   .list-item {
     grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  
+  .item-media {
+    aspect-ratio: auto;
+    height: 100%;
   }
 }
 
@@ -684,6 +690,27 @@ body {
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 24px;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin-left: 6px;
+  text-decoration: underline;
+  display: inline-block;
+  padding: 0;
+  transition: color var(--transition-fast);
+}
+
+.read-more-btn:hover {
+  color: var(--accent-light);
 }
 
 /* Checkbox Panel */
