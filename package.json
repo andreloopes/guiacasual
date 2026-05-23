@@ -1,0 +1,12 @@
+{
+  "name": "guia-restaurantes-sp",
+  "version": "1.0.0",
+  "description": "Interactive Restaurant Guide inspired by NY Times",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000"
+  },
+  "keywords": [],
+  "author": "André Lopes",
+  "license": "ISC"
+}
