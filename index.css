@@ -4,19 +4,19 @@
 
 :root {
   /* Color Palette - Minimalist High-Fashion Monochrome (Dark Mode) */
-  --bg-primary: #000000; /* Pure black background */
-  --bg-secondary: #0a0a0a; /* Very dark charcoal card background */
-  --bg-tertiary: #171717; /* Highlight background */
-  --accent: #ffffff; /* Pure white accent */
+  --bg-primary: #000000;      /* Pure black background */
+  --bg-secondary: #0a0a0a;    /* Very dark charcoal card background */
+  --bg-tertiary: #171717;     /* Highlight background */
+  --accent: #ffffff;          /* Pure white accent */
   --accent-rgb: 255, 255, 255;
   --accent-light: #f5f5f5;
   --accent-dark: #a3a3a3;
-
-  --text-primary: #ffffff; /* Pure white primary text */
-  --text-secondary: #a3a3a3; /* Muted neutral gray */
+  
+  --text-primary: #ffffff;    /* Pure white primary text */
+  --text-secondary: #a3a3a3;  /* Muted neutral gray */
   --text-tertiary: #525252;
-  --border-color: #262626; /* Sharp thin borders */
-
+  --border-color: #262626;    /* Sharp thin borders */
+  
   --surface-glow: transparent;
   --header-bg: none;
 
@@ -26,20 +26,18 @@
   --glass-blur: 12px;
 
   /* Fonts (Fashion Grotesque) */
-  --font-serif:
-    'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Ranks & Headings */
-  --font-sans:
-    'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Body & UI controls */
+  --font-serif: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Ranks & Headings */
+  --font-sans: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Body & UI controls */
 
   /* Widths */
   --max-width: 1200px;
-
+  
   /* Shadow - flat minimalist styling uses minimal shadows */
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: none;
   --shadow-glow: none;
-
+  
   /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-normal: 0.25s ease;
@@ -48,22 +46,22 @@
 
 /* Light Theme Overrides (Minimalist High-Fashion Monochrome - Light Mode) */
 body.light-theme {
-  --bg-primary: #ffffff; /* Pure white background */
-  --bg-secondary: #fbfbfb; /* Light gray card background */
-  --bg-tertiary: #f0f0f0; /* Highlight light gray */
-  --accent: #000000; /* Pure black accent */
+  --bg-primary: #ffffff;      /* Pure white background */
+  --bg-secondary: #fbfbfb;    /* Light gray card background */
+  --bg-tertiary: #f0f0f0;     /* Highlight light gray */
+  --accent: #000000;          /* Pure black accent */
   --accent-rgb: 0, 0, 0;
   --accent-light: #171717;
   --accent-dark: #404040;
-
-  --text-primary: #000000; /* Pure black primary text */
-  --text-secondary: #525252; /* Medium neutral gray */
+  
+  --text-primary: #000000;    /* Pure black primary text */
+  --text-secondary: #525252;  /* Medium neutral gray */
   --text-tertiary: #a3a3a3;
-  --border-color: #e5e5e5; /* Light gray borders */
-
+  --border-color: #e5e5e5;    /* Light gray borders */
+  
   --surface-glow: transparent;
   --header-bg: none;
-
+  
   --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(0, 0, 0, 0.08);
   --shadow-glow: none;
@@ -87,9 +85,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
-  transition:
-    background-color var(--transition-normal),
-    color var(--transition-normal);
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 /* Ambient Glow Background Element */
@@ -235,9 +231,7 @@ body {
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-bottom: 1px solid var(--glass-border);
-  transition:
-    background-color var(--transition-normal),
-    border var(--transition-normal);
+  transition: background-color var(--transition-normal), border var(--transition-normal);
 }
 
 .controls-container {
@@ -479,9 +473,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-  transition:
-    max-height var(--transition-normal),
-    opacity var(--transition-normal);
+  transition: max-height var(--transition-normal), opacity var(--transition-normal);
   max-height: 400px;
   overflow-y: auto;
 }
@@ -548,7 +540,7 @@ body {
   background-color: var(--bg-tertiary);
 }
 
-.option-item input[type='checkbox'] {
+.option-item input[type="checkbox"] {
   accent-color: var(--accent);
   cursor: pointer;
 }
@@ -559,7 +551,7 @@ body {
   user-select: none;
 }
 
-.option-item input[type='checkbox']:checked + .option-label {
+.option-item input[type="checkbox"]:checked + .option-label {
   color: var(--text-primary);
   font-weight: 600;
 }
@@ -651,7 +643,7 @@ body {
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
   }
-
+  
   .item-media {
     aspect-ratio: auto;
     height: 100%;
@@ -1166,7 +1158,7 @@ body {
   bottom: 0;
   width: min(450px, 100vw);
   background-color: var(--bg-secondary);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
@@ -1412,9 +1404,7 @@ body {
   align-items: center;
   gap: 8px;
   opacity: 0;
-  transition:
-    opacity var(--transition-fast),
-    transform var(--transition-fast);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
 }
 
 .toast.show {
