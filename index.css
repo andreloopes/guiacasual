@@ -3,68 +3,68 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Premium Midnight Navy & Cobalt Blue Theme */
-  --bg-primary: #060913;      /* Deep midnight blue */
-  --bg-secondary: #0d1224;    /* Slate navy card background */
-  --bg-tertiary: #141b34;     /* Highlight background */
-  --accent: #3b66ff;          /* Electric cobalt blue */
-  --accent-rgb: 59, 102, 255;
-  --accent-light: #6b8aff;
-  --accent-dark: #1a3db8;
+  /* Color Palette - Minimalist High-Fashion Monochrome (Dark Mode) */
+  --bg-primary: #000000;      /* Pure black background */
+  --bg-secondary: #0a0a0a;    /* Very dark charcoal card background */
+  --bg-tertiary: #171717;     /* Highlight background */
+  --accent: #ffffff;          /* Pure white accent */
+  --accent-rgb: 255, 255, 255;
+  --accent-light: #f5f5f5;
+  --accent-dark: #a3a3a3;
   
-  --text-primary: #f1f3f9;    /* Clean off-white */
-  --text-secondary: #929cb7;  /* Soft gray-blue secondary text */
-  --text-tertiary: #616d8a;
-  --border-color: #1c2541;    /* Navy border */
+  --text-primary: #ffffff;    /* Pure white primary text */
+  --text-secondary: #a3a3a3;  /* Muted neutral gray */
+  --text-tertiary: #525252;
+  --border-color: #262626;    /* Sharp thin borders */
   
-  --surface-glow: rgba(59, 102, 255, 0.04);
-  --header-bg: radial-gradient(circle at 50% -20%, rgba(59, 102, 255, 0.2), transparent 75%), #060913;
+  --surface-glow: transparent;
+  --header-bg: none;
 
-  /* Glassmorphism settings */
-  --glass-bg: rgba(13, 18, 36, 0.75);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-blur: 16px;
+  /* Glassmorphism settings - high contrast dark */
+  --glass-bg: rgba(0, 0, 0, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 12px;
 
-  /* Fonts (Brazilian Modern Sans) */
-  --font-serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Replaced Lora with Outfit */
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Replaced Montserrat with Plus Jakarta Sans */
+  /* Fonts (Fashion Grotesque) */
+  --font-serif: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Ranks & Headings */
+  --font-sans: "Schibsted Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Body & UI controls */
 
   /* Widths */
   --max-width: 1200px;
   
-  /* Shadow */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 30px 0 rgba(59, 102, 255, 0.12);
+  /* Shadow - flat minimalist styling uses minimal shadows */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-glow: none;
   
   /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Theme Overrides (Vibrant Cobalt & Off-White) */
+/* Light Theme Overrides (Minimalist High-Fashion Monochrome - Light Mode) */
 body.light-theme {
-  --bg-primary: #f5f7fb;      /* Clean off-white background */
-  --bg-secondary: #ffffff;    /* Card background */
-  --bg-tertiary: #ebf0f9;     /* Light highlight blue-gray */
-  --accent: #002df5;          /* Rich glossy cobalt blue from the photo! */
-  --accent-rgb: 0, 45, 245;
-  --accent-light: #3a5eff;
-  --accent-dark: #001fb3;
+  --bg-primary: #ffffff;      /* Pure white background */
+  --bg-secondary: #fbfbfb;    /* Light gray card background */
+  --bg-tertiary: #f0f0f0;     /* Highlight light gray */
+  --accent: #000000;          /* Pure black accent */
+  --accent-rgb: 0, 0, 0;
+  --accent-light: #171717;
+  --accent-dark: #404040;
   
-  --text-primary: #080e22;    /* Deep navy text */
-  --text-secondary: #424d6d;
-  --text-tertiary: #808cae;
-  --border-color: #d1dbed;
+  --text-primary: #000000;    /* Pure black primary text */
+  --text-secondary: #525252;  /* Medium neutral gray */
+  --text-tertiary: #a3a3a3;
+  --border-color: #e5e5e5;    /* Light gray borders */
   
-  --surface-glow: rgba(0, 45, 245, 0.02);
-  --header-bg: radial-gradient(circle at 50% -20%, rgba(0, 45, 245, 0.08), transparent 75%), #f5f7fb;
+  --surface-glow: transparent;
+  --header-bg: none;
   
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 45, 245, 0.06);
-  --shadow-glow: 0 0 30px 0 rgba(0, 45, 245, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --shadow-glow: none;
 }
 
 /* Reset and Base Styles */
@@ -262,7 +262,7 @@ body {
 .view-toggle {
   display: flex;
   border: 1px solid var(--border-color);
-  border-radius: 30px;
+  border-radius: 2px;
   overflow: hidden;
   padding: 2px;
   background-color: var(--bg-primary);
@@ -282,7 +282,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  border-radius: 30px;
+  border-radius: 0;
   transition: all var(--transition-fast);
 }
 
@@ -318,7 +318,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  border-radius: 30px;
+  border-radius: 2px;
   transition: all var(--transition-fast);
 }
 
@@ -339,7 +339,7 @@ body {
   font-weight: 800;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +352,7 @@ body {
   color: var(--text-primary);
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 2px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -408,7 +408,7 @@ body {
   width: 100%;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 30px;
+  border-radius: 2px;
   padding: 8px 16px 8px 36px;
   font-family: var(--font-sans);
   font-size: 12px;
@@ -445,7 +445,7 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
-  border-radius: 30px;
+  border-radius: 2px;
   transition: all var(--transition-fast);
 }
 
@@ -583,7 +583,7 @@ body {
 .filter-tag {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 30px;
+  border-radius: 2px;
   padding: 4px 12px;
   font-size: 11px;
   display: flex;
@@ -676,7 +676,7 @@ body {
   color: var(--accent-light);
   border: 1px solid rgba(var(--accent-rgb), 0.2);
   padding: 2px 10px;
-  border-radius: 20px;
+  border-radius: 2px;
   font-size: 11px;
   font-weight: 600;
 }
@@ -766,7 +766,7 @@ body {
   color: var(--text-secondary);
   padding: 8px 16px;
   border: 1px solid var(--border-color);
-  border-radius: 30px;
+  border-radius: 2px;
   transition: all var(--transition-fast);
 }
 
@@ -778,7 +778,7 @@ body {
   width: 16px;
   height: 16px;
   border: 1px solid var(--text-tertiary);
-  border-radius: 3px;
+  border-radius: 0px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -847,7 +847,7 @@ body {
 /* List Item Right Column: Image */
 .item-media {
   position: relative;
-  border-radius: 8px;
+  border-radius: 0px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
   aspect-ratio: 16 / 10;
@@ -878,7 +878,7 @@ body {
 .grid-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -924,7 +924,7 @@ body {
   font-weight: 800;
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -995,7 +995,7 @@ body {
   border: none;
   background-color: var(--bg-secondary);
   color: var(--text-primary);
-  border-radius: 12px;
+  border-radius: 2px;
   max-width: 800px;
   width: 90%;
   margin: auto;
@@ -1037,7 +1037,7 @@ body {
   color: white;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1098,7 +1098,7 @@ body {
 .dialog-info-box {
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 20px;
   font-size: 13px;
   color: var(--text-secondary);
@@ -1213,7 +1213,7 @@ body {
 .stat-card {
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 16px;
   text-align: center;
   display: flex;
@@ -1246,7 +1246,7 @@ body {
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 2px;
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 600;
@@ -1301,7 +1301,7 @@ body {
   padding: 10px 14px;
   background-color: var(--bg-tertiary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 2px;
 }
 
 .pick-meta {
@@ -1326,7 +1326,7 @@ body {
 .pick-badge-type {
   font-size: 10px;
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: 2px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -1373,7 +1373,7 @@ body {
   color: var(--bg-primary);
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
@@ -1395,7 +1395,7 @@ body {
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   padding: 12px 24px;
-  border-radius: 30px;
+  border-radius: 2px;
   font-size: 12px;
   font-weight: 600;
   box-shadow: var(--shadow-lg);
