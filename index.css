@@ -3,31 +3,31 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette - Elegant Dark-first Newspaper Theme */
-  --bg-primary: #0e0e10;
-  --bg-secondary: #161619;
-  --bg-tertiary: #1e1e23;
-  --accent: #d97706; /* Warm amber/gold */
-  --accent-rgb: 217, 119, 6;
-  --accent-light: #f59e0b;
-  --accent-dark: #b45309;
+  /* Color Palette - Premium Midnight Navy & Cobalt Blue Theme */
+  --bg-primary: #060913;      /* Deep midnight blue */
+  --bg-secondary: #0d1224;    /* Slate navy card background */
+  --bg-tertiary: #141b34;     /* Highlight background */
+  --accent: #3b66ff;          /* Electric cobalt blue */
+  --accent-rgb: 59, 102, 255;
+  --accent-light: #6b8aff;
+  --accent-dark: #1a3db8;
   
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --text-tertiary: #6b7280;
-  --border-color: #27272a;
+  --text-primary: #f1f3f9;    /* Clean off-white */
+  --text-secondary: #929cb7;  /* Soft gray-blue secondary text */
+  --text-tertiary: #616d8a;
+  --border-color: #1c2541;    /* Navy border */
   
-  --surface-glow: rgba(217, 119, 6, 0.03);
-  --header-bg: radial-gradient(circle at 50% -20%, rgba(217, 119, 6, 0.15), transparent 70%), #0e0e10;
+  --surface-glow: rgba(59, 102, 255, 0.04);
+  --header-bg: radial-gradient(circle at 50% -20%, rgba(59, 102, 255, 0.2), transparent 75%), #060913;
 
   /* Glassmorphism settings */
-  --glass-bg: rgba(22, 22, 25, 0.75);
+  --glass-bg: rgba(13, 18, 36, 0.75);
   --glass-border: rgba(255, 255, 255, 0.05);
   --glass-blur: 16px;
 
-  /* Fonts */
-  --font-serif: "Lora", Georgia, serif;
-  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Fonts (Brazilian Modern Sans) */
+  --font-serif: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Replaced Lora with Outfit */
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Replaced Montserrat with Plus Jakarta Sans */
 
   /* Widths */
   --max-width: 1200px;
@@ -36,7 +36,7 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 30px 0 rgba(217, 119, 6, 0.1);
+  --shadow-glow: 0 0 30px 0 rgba(59, 102, 255, 0.12);
   
   /* Transitions */
   --transition-fast: 0.2s ease;
@@ -44,27 +44,27 @@
   --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Theme Overrides (Classic Newspaper Theme) */
+/* Light Theme Overrides (Vibrant Cobalt & Off-White) */
 body.light-theme {
-  --bg-primary: #faf8f5; /* Warm cream/off-white */
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f4f1eb;
-  --accent: #b45309; /* Deeper amber */
-  --accent-rgb: 180, 83, 9;
-  --accent-light: #d97706;
-  --accent-dark: #78350f;
+  --bg-primary: #f5f7fb;      /* Clean off-white background */
+  --bg-secondary: #ffffff;    /* Card background */
+  --bg-tertiary: #ebf0f9;     /* Light highlight blue-gray */
+  --accent: #002df5;          /* Rich glossy cobalt blue from the photo! */
+  --accent-rgb: 0, 45, 245;
+  --accent-light: #3a5eff;
+  --accent-dark: #001fb3;
   
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --text-tertiary: #9ca3af;
-  --border-color: #e5e7eb;
+  --text-primary: #080e22;    /* Deep navy text */
+  --text-secondary: #424d6d;
+  --text-tertiary: #808cae;
+  --border-color: #d1dbed;
   
-  --surface-glow: rgba(180, 83, 9, 0.02);
-  --header-bg: radial-gradient(circle at 50% -20%, rgba(180, 83, 9, 0.06), transparent 70%), #faf8f5;
+  --surface-glow: rgba(0, 45, 245, 0.02);
+  --header-bg: radial-gradient(circle at 50% -20%, rgba(0, 45, 245, 0.08), transparent 75%), #f5f7fb;
   
   --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.06);
-  --shadow-glow: 0 0 30px 0 rgba(180, 83, 9, 0.05);
+  --glass-border: rgba(0, 45, 245, 0.06);
+  --shadow-glow: 0 0 30px 0 rgba(0, 45, 245, 0.05);
 }
 
 /* Reset and Base Styles */
@@ -343,6 +343,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.15);
+  color: var(--accent);
+}
+
+.theme-toggle-btn svg {
+  stroke: var(--text-primary);
+  transition: transform var(--transition-fast);
+}
+
+.theme-toggle-btn:hover svg {
+  stroke: var(--accent);
+  transform: rotate(15deg);
 }
 
 .clear-filters-btn {

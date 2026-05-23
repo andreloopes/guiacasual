@@ -51,6 +51,8 @@ const elements = {
   btnShareLink: document.getElementById('btn-share-link'),
   // Detail Dialog
   detailDialog: document.getElementById('detail-dialog'),
+  // Theme Toggle
+  btnThemeToggle: document.getElementById('btn-theme-toggle'),
   // Toast
   toast: document.getElementById('toast')
 };
@@ -61,6 +63,9 @@ const elements = {
 
 async function init() {
   try {
+    // 0. Initialize theme
+    initTheme();
+
     // 1. Fetch data
     const response = await fetch('restaurants.json');
     if (!response.ok) throw new Error('Falha ao carregar dados dos restaurantes.');
@@ -727,6 +732,51 @@ function copyShareLink() {
 }
 
 // ==========================================================================
+// Theme Manager (Dark/Light Mode)
+// ==========================================================================
+
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    document.body.classList.remove('dark-theme');
+    updateThemeToggleIcons(true);
+  } else {
+    document.body.classList.add('dark-theme');
+    document.body.classList.remove('light-theme');
+    updateThemeToggleIcons(false);
+  }
+}
+
+function toggleTheme() {
+  const isLight = document.body.classList.contains('light-theme');
+  if (isLight) {
+    document.body.classList.remove('light-theme');
+    document.body.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark');
+    updateThemeToggleIcons(false);
+  } else {
+    document.body.classList.remove('dark-theme');
+    document.body.classList.add('light-theme');
+    localStorage.setItem('theme', 'light');
+    updateThemeToggleIcons(true);
+  }
+}
+
+function updateThemeToggleIcons(isLight) {
+  if (!elements.btnThemeToggle) return;
+  const sunIcon = elements.btnThemeToggle.querySelector('.sun-icon');
+  const moonIcon = elements.btnThemeToggle.querySelector('.moon-icon');
+  if (isLight) {
+    sunIcon.classList.remove('hidden');
+    moonIcon.classList.add('hidden');
+  } else {
+    sunIcon.classList.add('hidden');
+    moonIcon.classList.remove('hidden');
+  }
+}
+
+// ==========================================================================
 // Event Bindings & Listeners
 // ==========================================================================
 
@@ -754,6 +804,11 @@ function bindEventListeners() {
     elements.btnMyPicks.classList.toggle('active', state.showMyPicksOnly);
     applyFiltersAndRender();
   });
+
+  // Theme Toggle Button
+  if (elements.btnThemeToggle) {
+    elements.btnThemeToggle.addEventListener('click', toggleTheme);
+  }
 
   // Search input typing (debounced slightly or responsive)
   elements.searchInput.addEventListener('input', (e) => {
