@@ -11,12 +11,12 @@ Durante a modernização da aplicação, adotamos diretrizes rígidas para evita
 ### 1. Proteção contra Scripting Cross-Site (XSS)
 
 - **Causa Comum:** Renderizar strings do banco de dados ou do JSON diretamente no DOM usando `.innerHTML` ou de forma não tratada pode permitir a execução de códigos maliciosos se as descrições contiverem tags `<script>` ou handlers `onerror`.
-- **Ação Técnica:** Implementamos o utilitário seguro `escapeHtml()` no arquivo [src/shared/dom.ts](./src/shared/dom.ts). Toda renderização dinâmica de dados do restaurante (nome, culinária, descrição, bairro) passa obrigatoriamente por essa higienização antes de entrar no fluxo de renderização HTML do navegador.
+- **Ação Técnica:** Implementamos o utilitário seguro `escapeHtml()` no arquivo [src/dom.js](file:///Users/andrelopes/Documents/Site/src/dom.js). Toda renderização dinâmica de dados do restaurante (nome, culinária, descrição, bairro) passa obrigatoriamente por essa higienização antes de entrar no fluxo de renderização HTML do navegador.
 
 ### 2. Injeção de Parâmetros na URL
 
 - **Causa Comum:** Os favoritos do usuário podem ser importados automaticamente via parâmetros de query string na URL (`?picks=...`). Tratar esses dados de forma ingênua (usando `eval()` ou parsing simples) expõe a SPA a quebras de memória e ataques de redirecionamento.
-- **Ação Técnica:** O utilitário [src/shared/sharing.ts](./src/shared/sharing.ts) realiza validação estrita durante a decodificação dos parâmetros. Apenas inteiros (referentes a rankings válidos de 1 a 100) e os tipos enumerados permitidos (`visited` ou `wantToGo`) são importados para o estado interno da aplicação. Dados desconhecidos são sumariamente ignorados.
+- **Ação Técnica:** O utilitário [src/picks.js](file:///Users/andrelopes/Documents/Site/src/picks.js) realiza validação estrita durante a decodificação dos parâmetros. Apenas inteiros (referentes a rankings válidos de 1 a 100) e os tipos enumerados permitidos (`visited` ou `wantToGo`) são importados para o estado interno da aplicação. Dados desconhecidos são sumariamente ignorados.
 
 ---
 

@@ -1,308 +1,333 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Os 100 Melhores Restaurantes do Brasil — Guia 2025</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Os 100 Melhores Restaurantes do Brasil — Guia 2025</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Explore o ranking interativo dos 100 melhores restaurantes do Brasil em 2025. Filtre por culinária, preço, cidade e crie o seu próprio guia personalizado com seus favoritos.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Os 100 Melhores Restaurantes do Brasil — Guia Interativo 2025">
+  <meta property="og:description" content="Explore o ranking interativo dos 100 melhores restaurantes do Brasil. Filtre por culinária, preço, cidade e monte a sua lista personalizada.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts (Schibsted Grotesk & Space Grotesk) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/controls.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/filters.css">
+  <link rel="stylesheet" href="styles/drawer.css">
+  <link rel="stylesheet" href="styles/dialog.css">
+</head>
+<body class="dark-theme">
 
-    <!-- SEO Meta Tags -->
-    <meta
-      name="description"
-      content="Explore o ranking interativo dos 100 melhores restaurantes do Brasil em 2025. Filtre por culinária, preço, cidade e crie o seu próprio guia personalizado com seus favoritos."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta
-      property="og:title"
-      content="Os 100 Melhores Restaurantes do Brasil — Guia Interativo 2025"
-    />
-    <meta
-      property="og:description"
-      content="Explore o ranking interativo dos 100 melhores restaurantes do Brasil. Filtre por culinária, preço, cidade e monte a sua lista personalizada."
-    />
-    <meta property="og:type" content="website" />
+  <!-- SVG Icon Sprite -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="8" y1="6" x2="21" y2="6"></line>
+      <line x1="8" y1="12" x2="21" y2="12"></line>
+      <line x1="8" y1="18" x2="21" y2="18"></line>
+      <line x1="3" y1="6" x2="3.01" y2="6"></line>
+      <line x1="3" y1="12" x2="3.01" y2="12"></line>
+      <line x1="3" y1="18" x2="3.01" y2="18"></line>
+    </symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="7" height="7"></rect>
+      <rect x="14" y="3" width="7" height="7"></rect>
+      <rect x="14" y="14" width="7" height="7"></rect>
+      <rect x="3" y="14" width="7" height="7"></rect>
+    </symbol>
+    <symbol id="icon-bookmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+    </symbol>
+    <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line>
+    </symbol>
+    <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    </symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+      <polyline points="16 6 12 2 8 6"></polyline>
+      <line x1="12" y1="2" x2="12" y2="15"></line>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </symbol>
+  </svg>
 
-    <!-- Google Fonts (Schibsted Grotesk & Space Grotesk) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body class="dark-theme">
-    <div class="ambient-glow"></div>
-
-    <!-- Header / Hero Section -->
-    <header class="hero-header">
-      <div class="hero-container">
-        <div class="logo-area">
-          <span class="logo-eyebrow">Guia de Gastronomia 2025</span>
-        </div>
-        <div class="hero-title-group">
-          <h1 class="hero-title">
-            <span class="hero-title-prefix">Os</span>
-            <span class="ranking-figure">100</span>
-            <span class="ranking-title">Melhores Restaurantes</span>
-            <span class="ranking-subtitle">do Brasil</span>
-          </h1>
-        </div>
-        <p class="hero-intro">
-          O ranking anual dos melhores estabelecimentos gastronômicos do país, eleitos pelo júri da
-          EXAME Casual. Uma jornada interativa pelos sabores marcantes de São Paulo, Rio de Janeiro,
-          Salvador, Curitiba e mais. Monte a sua lista, marque as suas visitas e descubra novas
-          experiências.
-        </p>
-        <div class="guide-byline">
-          <span class="guide-author">Por <strong>André Lopes</strong></span>
-          <span class="guide-date">Publicado em 24 de Abril, 2025 • Atualizado em Maio, 2026</span>
-        </div>
+  <!-- Hero -->
+  <header class="hero-header">
+    <div class="hero-container">
+      <div class="logo-area">
+        <span class="logo-eyebrow">Guia de Gastronomia 2025</span>
       </div>
-    </header>
-
-    <!-- Sticky Controls and Filters Bar -->
-    <section class="controls-bar" id="controls-bar">
-      <div class="controls-container">
-        <!-- Primary Controls (View Toggle & My Picks) -->
-        <div class="controls-primary">
-          <!-- Grid/List Toggle -->
-          <div class="view-toggle">
-            <button
-              id="btn-view-list"
-              class="toggle-btn active"
-              aria-label="Visualização em Lista"
-              title="Ver como Lista"
-            >
-              <svg width="18" height="18"><use href="/sprite.svg#icon-list"></use></svg>
-              <span>Lista</span>
-            </button>
-            <button
-              id="btn-view-grid"
-              class="toggle-btn"
-              aria-label="Visualização em Grade"
-              title="Ver como Grade"
-            >
-              <svg width="18" height="18"><use href="/sprite.svg#icon-grid"></use></svg>
-              <span>Grade</span>
-            </button>
-          </div>
-
-          <!-- My Picks Filter Button -->
-          <button
-            id="btn-my-picks"
-            class="my-picks-btn"
-            aria-label="Minhas Escolhas, ver lista personalizada"
-          >
-            <svg width="18" height="18"><use href="/sprite.svg#icon-bookmark"></use></svg>
-            <span>Minhas Escolhas</span>
-            <span class="picks-badge" id="picks-badge">0</span>
-          </button>
-
-          <!-- Theme Toggle Button -->
-          <button
-            id="btn-theme-toggle"
-            class="theme-toggle-btn"
-            aria-label="Alterar tema"
-            title="Mudar Tema"
-          >
-            <svg class="sun-icon hidden" width="18" height="18">
-              <use href="/sprite.svg#icon-sun"></use>
-            </svg>
-            <svg class="moon-icon" width="18" height="18">
-              <use href="/sprite.svg#icon-moon"></use>
-            </svg>
-          </button>
-
-          <!-- Clear Filters Button (Visible when filters are active) -->
-          <button
-            id="btn-clear-filters"
-            class="clear-filters-btn hidden"
-            aria-label="Limpar todos os filtros"
-          >
-            Limpar filtros
-          </button>
-        </div>
-
-        <!-- Filter Toggle Buttons -->
-        <div class="controls-secondary">
-          <div class="search-input-wrapper">
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Pesquisar restaurante..."
-              aria-label="Pesquisar restaurante"
-            />
-            <svg class="search-icon" width="16" height="16">
-              <use href="/sprite.svg#icon-search"></use>
-            </svg>
-          </div>
-
-          <button class="filter-dropdown-trigger" id="trigger-city" data-filter="city">
-            <span>Cidade</span>
-            <svg width="14" height="14"><use href="/sprite.svg#icon-chevron-down"></use></svg>
-          </button>
-
-          <button class="filter-dropdown-trigger" id="trigger-cuisine" data-filter="cuisine">
-            <span>Culinária</span>
-            <svg width="14" height="14"><use href="/sprite.svg#icon-chevron-down"></use></svg>
-          </button>
-
-          <button class="filter-dropdown-trigger" id="trigger-price" data-filter="price">
-            <span>Preço</span>
-            <svg width="14" height="14"><use href="/sprite.svg#icon-chevron-down"></use></svg>
-          </button>
-
-          <button class="filter-dropdown-trigger" id="trigger-status" data-filter="status">
-            <span>Status</span>
-            <svg width="14" height="14"><use href="/sprite.svg#icon-chevron-down"></use></svg>
-          </button>
-        </div>
+      <div class="hero-title-group">
+        <h1 class="hero-title">
+          <span class="hero-title-prefix">Os</span>
+          <span class="hero-title-rank">100</span>
+          <span class="hero-title-name">Melhores Restaurantes</span>
+          <span class="hero-title-region">do Brasil</span>
+        </h1>
       </div>
-
-      <div class="filter-panels-container container-hidden" id="filter-panels-container">
-        <div class="filter-panel" id="panel-city" data-filter="city">
-          <div class="panel-header-actions">
-            <span class="panel-title">Filtrar por Cidade</span>
-            <button class="select-all-btn" data-target="city">Todas</button>
-          </div>
-          <div class="filter-options-grid" id="options-city"></div>
-        </div>
-
-        <div class="filter-panel" id="panel-cuisine" data-filter="cuisine">
-          <div class="panel-header-actions">
-            <span class="panel-title">Filtrar por Culinária</span>
-            <button class="select-all-btn" data-target="cuisine">Todas</button>
-          </div>
-          <div class="filter-options-grid" id="options-cuisine"></div>
-        </div>
-
-        <!-- Price Panel -->
-        <div class="filter-panel" id="panel-price" data-filter="price">
-          <div class="panel-header-actions">
-            <span class="panel-title">Filtrar por Preço</span>
-            <button class="select-all-btn" data-target="price">Todos</button>
-          </div>
-          <div class="filter-options-grid" id="options-price">
-            <label class="option-item">
-              <input type="checkbox" value="$" />
-              <span class="option-label">$ (Barato)</span>
-            </label>
-            <label class="option-item">
-              <input type="checkbox" value="$$" />
-              <span class="option-label">$$ (Moderado)</span>
-            </label>
-            <label class="option-item">
-              <input type="checkbox" value="$$$" />
-              <span class="option-label">$$$ (Caro)</span>
-            </label>
-            <label class="option-item">
-              <input type="checkbox" value="$$$$" />
-              <span class="option-label">$$$$ (Muito Caro)</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Status Panel -->
-        <div class="filter-panel" id="panel-status" data-filter="status">
-          <div class="panel-header-actions">
-            <span class="panel-title">Filtrar por Visitas</span>
-          </div>
-          <div class="filter-options-grid" id="options-status">
-            <label class="option-item">
-              <input type="checkbox" value="visited" />
-              <span class="option-label">Já fui</span>
-            </label>
-            <label class="option-item">
-              <input type="checkbox" value="wantToGo" />
-              <span class="option-label">Quero ir</span>
-            </label>
-            <label class="option-item">
-              <input type="checkbox" value="unvisited" />
-              <span class="option-label">Não visitados</span>
-            </label>
-          </div>
-        </div>
+      <p class="hero-intro">
+        O ranking anual dos melhores estabelecimentos gastronômicos do país, eleitos pelo júri da EXAME Casual. Uma jornada interativa pelos sabores marcantes de São Paulo, Rio de Janeiro, Salvador, Curitiba e mais. Monte a sua lista, marque as suas visitas e descubra novas experiências.
+      </p>
+      <div class="guide-meta">
+        <span class="guide-author">Por <strong>André Lopes</strong></span>
+        <span class="guide-date">Publicado em 24 de Abril, 2025 • Atualizado em Maio, 2026</span>
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- Main Content Layout -->
-    <main class="main-content">
-      <div id="active-filters-summary" class="active-filters-summary hidden">
-        <span class="summary-text">Exibindo restaurantes filtrados por:</span>
-        <div class="summary-tags" id="summary-tags"></div>
-      </div>
-
-      <div id="restaurants-container" class="view-list"></div>
-
-      <!-- Zero State / Empty Results -->
-      <div id="empty-state" class="empty-state hidden">
-        <div class="empty-state-icon">
-          <svg width="48" height="48"><use href="/sprite.svg#icon-minus"></use></svg>
+  <!-- Sticky Controls and Filters Bar -->
+  <section class="controls-bar" id="controls-bar">
+    <div class="controls-container">
+      
+      <!-- Primary Controls (View Toggle & My Picks) -->
+      <div class="controls-primary">
+        <!-- Grid/List Toggle -->
+        <div class="view-toggle">
+          <button id="btn-view-list" class="toggle-btn active" aria-label="Visualização em Lista" title="Ver como Lista">
+            <svg width="18" height="18"><use href="#icon-list"></use></svg>
+            <span>Lista</span>
+          </button>
+          <button id="btn-view-grid" class="toggle-btn" aria-label="Visualização em Grade" title="Ver como Grade">
+            <svg width="18" height="18"><use href="#icon-grid"></use></svg>
+            <span>Grade</span>
+          </button>
         </div>
-        <h2>Nenhum restaurante encontrado</h2>
-        <p>Tente ajustar os seus filtros de pesquisa ou pesquisar por outro termo.</p>
-        <button id="btn-reset-filters-empty" class="reset-empty-btn">
-          Limpar todos os filtros
+
+        <!-- My Picks Filter Button -->
+        <button id="btn-my-picks" class="my-picks-btn" aria-label="Ver meus favoritos">
+          <svg width="18" height="18"><use href="#icon-bookmark"></use></svg>
+          <span>Minhas Escolhas</span>
+          <span class="picks-badge" id="picks-badge">0</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="btn-theme-toggle" class="theme-toggle-btn" aria-label="Alterar tema" title="Mudar Tema">
+          <svg class="sun-icon hidden" width="18" height="18"><use href="#icon-sun"></use></svg>
+          <svg class="moon-icon" width="18" height="18"><use href="#icon-moon"></use></svg>
+        </button>
+
+        <!-- Clear Filters Button (Visible when filters are active) -->
+        <button id="btn-clear-filters" class="clear-filters-btn hidden" aria-label="Limpar todos os filtros">
+          Limpar filtros
         </button>
       </div>
-    </main>
 
-    <!-- Export / Share Panel (Drawer) -->
-    <aside class="picks-drawer" id="picks-drawer" aria-hidden="true">
-      <div class="drawer-backdrop" id="drawer-backdrop"></div>
-      <div class="drawer-content">
-        <div class="drawer-header">
-          <h2>Minhas Escolhas</h2>
-          <button id="btn-close-drawer" class="close-btn" aria-label="Fechar painel">
-            <svg width="24" height="24"><use href="/sprite.svg#icon-close"></use></svg>
+      <!-- Filter Toggle Buttons -->
+      <div class="controls-secondary">
+        <div class="search-input-wrapper">
+          <input type="text" id="search-input" placeholder="Pesquisar restaurante..." aria-label="Pesquisar restaurante">
+          <svg class="search-icon" width="16" height="16"><use href="#icon-search"></use></svg>
+        </div>
+        
+        <button class="filter-dropdown-trigger" id="trigger-city" data-filter="city">
+          <span>Cidade</span>
+          <svg width="14" height="14"><use href="#icon-chevron"></use></svg>
+        </button>
+
+        <button class="filter-dropdown-trigger" id="trigger-cuisine" data-filter="cuisine">
+          <span>Culinária</span>
+          <svg width="14" height="14"><use href="#icon-chevron"></use></svg>
+        </button>
+
+        <button class="filter-dropdown-trigger" id="trigger-price" data-filter="price">
+          <span>Preço</span>
+          <svg width="14" height="14"><use href="#icon-chevron"></use></svg>
+        </button>
+
+        <button class="filter-dropdown-trigger" id="trigger-status" data-filter="status">
+          <span>Status</span>
+          <svg width="14" height="14"><use href="#icon-chevron"></use></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Dropdown Filter Menus (Hidden by default) -->
+    <div class="filter-panels-container container-hidden" id="filter-panels-container">
+      
+      <!-- City Panel -->
+      <div class="filter-panel" id="panel-city" data-filter="city">
+        <div class="panel-header-actions">
+          <span class="panel-title">Filtrar por Cidade</span>
+          <button class="select-all-btn" data-target="city">Todas</button>
+        </div>
+        <div class="filter-options-grid" id="options-city"></div>
+      </div>
+
+      <!-- Cuisine Panel -->
+      <div class="filter-panel" id="panel-cuisine" data-filter="cuisine">
+        <div class="panel-header-actions">
+          <span class="panel-title">Filtrar por Culinária</span>
+          <button class="select-all-btn" data-target="cuisine">Todas</button>
+        </div>
+        <div class="filter-options-grid" id="options-cuisine"></div>
+      </div>
+
+      <!-- Price Panel -->
+      <div class="filter-panel" id="panel-price" data-filter="price">
+        <div class="panel-header-actions">
+          <span class="panel-title">Filtrar por Preço</span>
+          <button class="select-all-btn" data-target="price">Todos</button>
+        </div>
+        <div class="filter-options-grid" id="options-price">
+          <label class="option-item">
+            <input type="checkbox" value="$">
+            <span class="option-label">$ (Barato)</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" value="$$">
+            <span class="option-label">$$ (Moderado)</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" value="$$$">
+            <span class="option-label">$$$ (Caro)</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" value="$$$$">
+            <span class="option-label">$$$$ (Muito Caro)</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Status Panel -->
+      <div class="filter-panel" id="panel-status" data-filter="status">
+        <div class="panel-header-actions">
+          <span class="panel-title">Filtrar por Visitas</span>
+        </div>
+        <div class="filter-options-grid" id="options-status">
+          <label class="option-item">
+            <input type="checkbox" value="visited">
+            <span class="option-label">Já fui</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" value="wantToGo">
+            <span class="option-label">Quero ir</span>
+          </label>
+          <label class="option-item">
+            <input type="checkbox" value="unvisited">
+            <span class="option-label">Não visitados</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Content Layout -->
+  <main class="main-content">
+    <div id="active-filters-summary" class="active-filters-summary hidden">
+      <span class="summary-text">Exibindo restaurantes filtrados por:</span>
+      <div class="summary-tags" id="summary-tags"></div>
+    </div>
+
+    <!-- Active List/Grid Container -->
+    <div id="restaurants-container" class="view-list"></div>
+
+    <!-- Zero State / Empty Results -->
+    <div id="empty-state" class="empty-state hidden">
+      <div class="empty-state-icon">
+        <svg width="48" height="48"><use href="#icon-minus"></use></svg>
+      </div>
+      <h2>Nenhum restaurante encontrado</h2>
+      <p>Tente ajustar os seus filtros de pesquisa ou pesquisar por outro termo.</p>
+      <button id="btn-reset-filters-empty" class="reset-empty-btn">Limpar todos os filtros</button>
+    </div>
+  </main>
+
+  <!-- Export / Share Panel (Drawer) -->
+  <aside class="picks-drawer" id="picks-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h2>Minhas Escolhas</h2>
+        <button id="btn-close-drawer" class="close-btn" aria-label="Fechar painel">
+          <svg width="24" height="24"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+      
+      <div class="drawer-body">
+        <div class="drawer-summary-stats">
+          <div class="stat-card">
+            <span class="stat-num" id="stat-visited">0</span>
+            <span class="stat-label">Já fui</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" id="stat-want-to-go">0</span>
+            <span class="stat-label">Quero ir</span>
+          </div>
+        </div>
+
+        <div class="drawer-actions">
+          <button id="btn-copy-picks" class="action-btn primary-action">
+            <svg width="16" height="16"><use href="#icon-copy"></use></svg>
+            <span>Copiar Lista (Texto)</span>
+          </button>
+          <button id="btn-share-link" class="action-btn">
+            <svg width="16" height="16"><use href="#icon-share"></use></svg>
+            <span>Gerar Link de Compartilhamento</span>
           </button>
         </div>
 
-        <div class="drawer-body">
-          <div class="drawer-summary-stats">
-            <div class="stat-card">
-              <span class="stat-num" id="stat-visited">0</span>
-              <span class="stat-label">Já fui</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-num" id="stat-want-to-go">0</span>
-              <span class="stat-label">Quero ir</span>
-            </div>
-          </div>
-
-          <div class="drawer-actions">
-            <button id="btn-copy-picks" class="action-btn primary-action">
-              <svg width="16" height="16"><use href="/sprite.svg#icon-copy"></use></svg>
-              <span>Copiar Lista (Texto)</span>
-            </button>
-            <button id="btn-share-link" class="action-btn">
-              <svg width="16" height="16"><use href="/sprite.svg#icon-share"></use></svg>
-              <span>Gerar Link de Compartilhamento</span>
-            </button>
-          </div>
-
-          <div class="drawer-section-title">Lista Curada</div>
-          <div id="drawer-picks-list" class="drawer-picks-list"></div>
-        </div>
+        <div class="drawer-section-title">Lista Curada</div>
+        <div id="drawer-picks-list" class="drawer-picks-list"></div>
       </div>
-    </aside>
+    </div>
+  </aside>
 
-    <dialog class="detail-dialog" id="detail-dialog"></dialog>
+  <!-- Detail Modal (for Grid View Card clicks) -->
+  <dialog class="detail-dialog" id="detail-dialog"></dialog>
 
-    <!-- Toast Notification System -->
-    <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
+  <!-- Toast Notification System -->
+  <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <p class="footer-logo">Os 100 Melhores Restaurantes</p>
-        <p class="footer-copy">&copy; 2026 EXAME Casual. Todos os direitos reservados.</p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-logo">Os 100 Melhores Restaurantes</p>
+      <p class="footer-copy">&copy; 2026 EXAME Casual. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-    <!-- Main JavaScript File -->
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <!-- Main JavaScript File -->
+  <script type="module" src="src/main.js"></script>
+</body>
 </html>

@@ -1,83 +1,42 @@
-# Guia de Restaurantes do Brasil - EXAME Casual
+# Guia Casual: 100 Melhores Restaurantes do Brasil
 
-Este é o portal interativo do ranking anual **"Os 100 Melhores Restaurantes do Brasil"** elaborado pela **EXAME Casual**.
+Este projeto consiste em um guia interativo que exibe o ranking dos 100 melhores restaurantes do Brasil.
+O site é publicado como uma página estática no GitHub Pages de forma automática através de GitHub Actions.
 
-O projeto foi migrado de uma base legada para um ambiente moderno em **TypeScript (estrito)** com **Vite**, arquitetura modular orientada a eventos, higienização completa de referências externas, acessibilidade aprimorada e cobertura de testes automatizados (unitários e de ponta a ponta).
+## Rodar localmente
 
----
-
-## 🚀 Setup Rápido (Local em 5 Comandos)
-
-Para rodar e testar o projeto localmente em sua máquina, execute a sequência de comandos abaixo no terminal:
+Para executar o projeto localmente com recarregamento rápido, execute os seguintes comandos:
 
 ```bash
-# 1. Instalar as dependências do projeto
 npm install
-
-# 2. Instalar o navegador Chromium para os testes E2E do Playwright
-npx playwright install chromium --with-deps
-
-# 3. Rodar a suíte de testes unitários com Vitest
-npm run test:unit
-
-# 4. Rodar a suíte de testes de fluxo ponta a ponta (E2E) com Playwright
-npm run test:e2e
-
-# 5. Iniciar o servidor de desenvolvimento local
 npm run dev
 ```
 
-Após o último comando, abra o link [http://localhost:3000](http://localhost:3000) no seu navegador.
+## Estrutura
 
----
+* index.html - Estrutura principal da página com o sprite de ícones inline
+* restaurants.json - Banco de dados estático contendo as informações dos 100 restaurantes
+* package.json - Script para execução do servidor de desenvolvimento local
+* README.md - Guia de documentação e setup do projeto
+* .gitignore - Regras de exclusão de arquivos para o Git
+* styles/base.css - Reset de estilos CSS, tokens de design em :root e tipografia
+* styles/layout.css - Estilização do header, hero, footer e contêiner principal da página
+* styles/controls.css - Barra de controles, botões de toggle de visualização, busca e sumário
+* styles/cards.css - Estilização visual dos cartões dos restaurantes nos modos lista e grade
+* styles/filters.css - Painéis suspensos (dropdowns) e checkboxes de filtragem
+* styles/drawer.css - Estilos da gaveta lateral "Minhas Escolhas" para restaurantes marcados
+* styles/dialog.css - Diálogo modal de detalhes de restaurantes e notificações flutuantes toast
+* src/main.js - Inicialização do guia, fetch do arquivo JSON e vínculos globais de eventos
+* src/state.js - Definição do objeto de estado e persistência local (LocalStorage)
+* src/dom.js - Cache de referências a seletores DOM e helpers rápidos de manipulação
+* src/filters.js - Geração de checkboxes de filtros e lógica para filtragem de restaurantes
+* src/render.js - Renderização dinâmica dos cartões de restaurantes nas visualizações ativas
+* src/picks.js - Atualização de badge, validação de URL compartilhada e geração de links
+* src/drawer.js - Controle de abertura, renderização e ações de cópia e envio da lista curada
+* src/dialog.js - Controle de abertura de modal detalhado e expansão de texto descritivo
+* src/theme.js - Gerenciamento de tema claro e escuro e alternância de ícones na barra
+* src/toast.js - Exibição de mensagens de aviso rápidas na interface do usuário
 
-## 🛠️ Outros Comandos Úteis
+## Atualizar a lista de restaurantes
 
-- **`npm run build`**: Compila os arquivos TypeScript e gera o bundle de produção otimizado na pasta `dist/`.
-- **`npm run preview`**: Inicia um servidor local para visualizar o bundle de produção gerado.
-- **`npm run lint`**: Executa o ESLint com regras Flat Config para verificar a qualidade do código.
-- **`npm run format`**: Formata automaticamente todos os arquivos do projeto usando o Prettier.
-- **`npm run type-check`**: Valida a compilação do TypeScript em modo estrito sem gerar arquivos de saída.
-
----
-
-## 📂 Estrutura do Projeto
-
-O código-fonte está estruturado sob a pasta `src/` de forma modular:
-
-```text
-├── e2e/                     # Testes de fluxo ponta a ponta com Playwright
-├── public/                  # Arquivos e ativos estáticos (ex: sprite.svg de ícones)
-├── src/
-│   ├── domain/              # Definições de tipos e validação Zod (restaurant.ts)
-│   ├── features/            # Funcionalidades e gerenciadores modulares isolados
-│   │   ├── detail-dialog/   # Modal dialog acessível de detalhes do restaurante
-│   │   ├── filters/         # Painéis suspensos para filtragem avançada
-│   │   ├── picks/           # Favoritos, contagem, drawer lateral e exportação
-│   │   ├── restaurant-list/ # Renderização dos cards (lista e grade) e Leia Mais
-│   │   ├── search/          # Barra de busca de texto com debounce
-│   │   ├── theme/           # Gerenciador de tema claro/escuro persistente
-│   │   ├── toast/           # Mensagens e avisos temporários na tela
-│   │   └── view-toggle/     # Alternador de visualização (Lista vs Grade)
-│   ├── shared/              # Utilitários puros compartilhados
-│   │   ├── __tests__/       # Testes unitários com Vitest (storage, event-bus, etc.)
-│   │   ├── dom.ts           # Seleção de elementos tipada e escape de HTML (Anti-XSS)
-│   │   ├── event-bus.ts     # PubSub desacoplado para comunicação entre features
-│   │   ├── formatters.ts    # Formatadores de texto e números (leia mais inteligente)
-│   │   ├── sharing.ts       # Serializador e desserializador de links de compartilhamento
-│   │   └── storage.ts       # Acesso e persistência tipada no localStorage
-│   └── main.ts              # Ponto de entrada (Bootstrapper) e inicialização do app
-├── index.css                # Estilos globais e tokens de design do projeto
-├── index.html               # Estrutura HTML principal (Layout Base)
-├── package.json             # Dependências e scripts de automação
-├── playwright.config.ts     # Configurações do framework de testes Playwright
-├── restaurants.json         # Base de dados estática dos 100 restaurantes
-├── tsconfig.json            # Configurações do compilador TypeScript (Strict)
-└── vite.config.ts           # Configurações do Vite e do Vitest
-```
-
----
-
-## ⚖️ Licença
-
-Este projeto é de uso exclusivo e confidencial da **EXAME Casual**. Todos os direitos reservados.
+Para atualizar os dados exibidos na lista (nomes, descrições, imagens, preços ou localizações), modifique diretamente o arquivo restaurants.json na raiz do projeto. Após realizar as alterações, faça o commit do arquivo e envie para a branch principal (main). O deploy no GitHub Pages será realizado de forma automatizada pelo fluxo de trabalho configurado no GitHub Actions.

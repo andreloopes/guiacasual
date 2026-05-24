@@ -14,12 +14,12 @@ Este guia detalha os padrões de desenvolvimento, convenções de código e o ch
 
 ### 2. Comunicação via EventBus
 
-- Modificações de estado que impactam múltiplos componentes devem ser propagadas exclusivamente por meio de eventos no `eventBus` ([src/shared/event-bus.ts](./src/shared/event-bus.ts)).
+- Modificações de estado que impactam múltiplos componentes devem ser propagadas exclusivamente por meio de eventos no `eventBus` ([src/shared/event-bus.ts](file:///Users/andrelopes/Documents/Site/src/shared/event-bus.ts)).
 - Não instancie ou manipule elementos de outras features diretamente.
 
 ### 3. Utilitários do DOM
 
-- Utilize as funções tipadas `$()` e `$$()` de [src/shared/dom.ts](./src/shared/dom.ts) para buscar elementos na árvore do DOM.
+- Utilize as funções tipadas `$()` e `$$()` de [src/shared/dom.ts](file:///Users/andrelopes/Documents/Site/src/shared/dom.ts) para buscar elementos na árvore do DOM.
 - Para renderização dinâmica de dados textuais fornecidos pelo usuário ou JSON externo, use a função `escapeHtml()` para proteção nativa contra ataques de scripting cross-site (XSS).
 
 ---
