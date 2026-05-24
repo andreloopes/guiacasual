@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body class="dark-theme">
-    <!-- Dynamic Background Ambient Effect -->
     <div class="ambient-glow"></div>
 
     <!-- Header / Hero Section -->
@@ -45,9 +44,9 @@
         <div class="hero-title-group">
           <h1 class="hero-title">
             <span class="hero-title-prefix">Os</span>
-            <span class="title-number">100</span>
-            <span class="title-main">Melhores Restaurantes</span>
-            <span class="title-country">do Brasil</span>
+            <span class="ranking-figure">100</span>
+            <span class="ranking-title">Melhores Restaurantes</span>
+            <span class="ranking-subtitle">do Brasil</span>
           </h1>
         </div>
         <p class="hero-intro">
@@ -56,7 +55,7 @@
           Salvador, Curitiba e mais. Monte a sua lista, marque as suas visitas e descubra novas
           experiências.
         </p>
-        <div class="hero-byline-container">
+        <div class="guide-byline">
           <span class="guide-author">Por <strong>André Lopes</strong></span>
           <span class="guide-date">Publicado em 24 de Abril, 2025 • Atualizado em Maio, 2026</span>
         </div>
@@ -162,28 +161,21 @@
         </div>
       </div>
 
-      <!-- Dropdown Filter Menus (Hidden by default) -->
       <div class="filter-panels-container container-hidden" id="filter-panels-container">
-        <!-- City Panel -->
         <div class="filter-panel" id="panel-city" data-filter="city">
           <div class="panel-header-actions">
             <span class="panel-title">Filtrar por Cidade</span>
             <button class="select-all-btn" data-target="city">Todas</button>
           </div>
-          <div class="filter-options-grid" id="options-city">
-            <!-- Populated by JS -->
-          </div>
+          <div class="filter-options-grid" id="options-city"></div>
         </div>
 
-        <!-- Cuisine Panel -->
         <div class="filter-panel" id="panel-cuisine" data-filter="cuisine">
           <div class="panel-header-actions">
             <span class="panel-title">Filtrar por Culinária</span>
             <button class="select-all-btn" data-target="cuisine">Todas</button>
           </div>
-          <div class="filter-options-grid" id="options-cuisine">
-            <!-- Populated by JS -->
-          </div>
+          <div class="filter-options-grid" id="options-cuisine"></div>
         </div>
 
         <!-- Price Panel -->
@@ -242,10 +234,7 @@
         <div class="summary-tags" id="summary-tags"></div>
       </div>
 
-      <!-- Active List/Grid Container -->
-      <div id="restaurants-container" class="view-list">
-        <!-- Populated dynamically by JS -->
-      </div>
+      <div id="restaurants-container" class="view-list"></div>
 
       <!-- Zero State / Empty Results -->
       <div id="empty-state" class="empty-state hidden">
@@ -295,17 +284,12 @@
           </div>
 
           <div class="drawer-section-title">Lista Curada</div>
-          <div id="drawer-picks-list" class="drawer-picks-list">
-            <!-- Populated by JS -->
-          </div>
+          <div id="drawer-picks-list" class="drawer-picks-list"></div>
         </div>
       </div>
     </aside>
 
-    <!-- Detail Modal (for Grid View Card clicks) -->
-    <dialog class="detail-dialog" id="detail-dialog">
-      <!-- Populated dynamically by JS -->
-    </dialog>
+    <dialog class="detail-dialog" id="detail-dialog"></dialog>
 
     <!-- Toast Notification System -->
     <div id="toast" class="toast hidden" role="alert" aria-live="polite"></div>

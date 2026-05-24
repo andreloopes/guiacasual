@@ -169,7 +169,7 @@ body {
   color: var(--text-secondary);
 }
 
-.title-number {
+.ranking-figure {
   font-size: clamp(80px, 14vw, 150px);
   font-weight: 900;
   letter-spacing: -0.04em;
@@ -180,14 +180,14 @@ body {
   font-family: var(--font-serif);
 }
 
-.title-main {
+.ranking-title {
   font-size: clamp(32px, 5vw, 64px);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 800;
 }
 
-.title-country {
+.ranking-subtitle {
   font-size: clamp(20px, 3.5vw, 40px);
   font-family: var(--font-serif);
   font-weight: 300;
@@ -208,7 +208,7 @@ body {
   line-height: 1.7;
 }
 
-.hero-byline-container {
+.guide-byline {
   display: flex;
   justify-content: center;
   align-items: center;

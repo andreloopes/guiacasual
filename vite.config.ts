@@ -11,6 +11,15 @@ export default defineConfig({
     strictPort: true,
   },
   test: {
+    globals: true,
+    environment: 'jsdom',
     exclude: ['node_modules', 'dist', 'e2e'],
+    coverage: {
+      provider: 'v8',
+      thresholds: {
+        lines: 80,
+        branches: 70,
+      },
+    },
   },
 });

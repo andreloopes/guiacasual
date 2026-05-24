@@ -6,7 +6,7 @@ Este documento serve como guia prático para jornalistas, editores e desenvolved
 
 ## 📋 Estrutura de Dados (`restaurants.json`)
 
-A base de dados do guia está centralizada no arquivo [restaurants.json](file:///Users/andrelopes/Documents/Site/restaurants.json). Ele consiste em um array com exatamente 100 objetos correspondentes aos restaurantes.
+A base de dados do guia está centralizada no arquivo [restaurants.json](./restaurants.json). Ele consiste em um array com exatamente 100 objetos correspondentes aos restaurantes.
 
 Cada entrada de restaurante no JSON deve obrigatoriamente seguir a estrutura abaixo para passar na validação estrita do compilador e do Zod schema:
 

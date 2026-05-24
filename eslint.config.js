@@ -11,30 +11,48 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['**/*.{ts,js}'],
+    files: ['**/*.{js,ts}'],
     languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
       globals: {
         ...globals.browser,
         ...globals.node,
       },
     },
     plugins: {
-      '@typescript-eslint': tsPlugin,
       prettier: prettierPlugin,
     },
     rules: {
+      ...prettierConfig.rules,
+      'prettier/prettier': 'error',
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+    },
+  },
+  {
+    files: ['**/*.ts'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        project: ['./tsconfig.app.json', './tsconfig.node.json', './tsconfig.test.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+    },
+    rules: {
+      ...tsPlugin.configs['recommended-type-checked'].rules,
       'no-undef': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'error',
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
-      ...prettierConfig.rules,
-      'prettier/prettier': 'error',
+    },
+  },
+  {
+    files: ['scripts/**/*.js'],
+    rules: {
+      'no-console': 'off',
     },
   },
 ];
