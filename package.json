@@ -1,12 +1,43 @@
 {
-  "name": "guia-restaurantes-sp",
+  "name": "exame-guia-restaurantes-brasil",
   "version": "1.0.0",
-  "description": "Interactive Restaurant Guide inspired by NY Times",
+  "type": "module",
+  "description": "Guia interativo dos 100 melhores restaurantes do Brasil da EXAME Casual",
   "main": "index.html",
   "scripts": {
-    "dev": "npx -y http-server -p 3000 -c-1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "prepare": "husky"
   },
   "keywords": [],
-  "author": "André Lopes",
-  "license": "ISC"
+  "author": "EXAME Casual",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "@typescript-eslint/eslint-plugin": "^8.59.4",
+    "@typescript-eslint/parser": "^8.59.4",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.5",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
+  }
 }

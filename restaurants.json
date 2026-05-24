@@ -217,15 +217,15 @@
   },
   {
     "rank": 18,
-    "name": "",
-    "city": "Glouton - Belo Horizonte",
+    "name": "Glouton",
+    "city": "Belo Horizonte",
     "votes": null,
     "description": "Antes de se entregar completamente à gastronomia, o mineiro Leonardo Paixão era médico, enfrentando plantões nos hospitais. Com o tempo e o sonho de ser chef, foi à França, onde aprendeu a arte culinária com mestres como Joël Robuchon, Pierre Gagnaire e Nicolas Magie. De volta a Belo Horizonte, fundou o Glouton, um restaurante que mescla ingredientes locais com a sofisticação da cozinha clássica. Um dos pratos mais icônicos da casa é a Papada de porco com mil folhas de mandioca (R$ 145), uma verdadeira celebração de sabores que reflete sua trajetória única.",
     "service": "Serviço: Rua Bárbara Heliodora, 59, Lourdes, Belo Horizonte. Telefone (31) 3292-4237. Abre de segunda a sábado das 19h às 23h.",
     "imageUrl": "https://classic.exame.com/wp-content/uploads/2025/04/Asu-43.jpg",
     "cuisine": "Carnes",
     "price": "$$$",
-    "neighborhood": "Glouton - Belo Horizonte"
+    "neighborhood": "Lourdes"
   },
   {
     "rank": 18,
@@ -541,8 +541,8 @@
   },
   {
     "rank": 46,
-    "name": "Tangará Jean",
-    "city": "Georges - São Paulo",
+    "name": "Tangará Jean-Georges",
+    "city": "São Paulo",
     "votes": null,
     "description": "Premiado com uma estrela Michelin este ano, o Tangará Jean-Georges oferece uma proposta de gastronomia contemporânea que combina técnicas francesas refinadas, influências asiáticas e ingredientes brasileiros. Sob a liderança do chef executivo Filipe Rizzato, o restaurante revela novidades no menu assinado pelo celebrado chef francês Jean-Georges Vongerichten. O novo menu degustação premium (R$ 1.040) inclui iguarias como o caviar e brioche, com gemas confitadas e ervas frescas; Laços de Atum, acompanhado de avocado, rabanete e molho de gengibre; e o foie gras caramelizado, que é servido com compota de cereja fresca, amêndoas, brioche tostado e folhas jovens de aipo.",
     "service": "Serviço: Rua Dep. Laércio Corte, 1501, Panamby, São Paulo. Telefone: (11) 4904-4040. Quarta a sábado das 19h às 23h.",
@@ -721,15 +721,15 @@
   },
   {
     "rank": 61,
-    "name": "",
-    "city": "Boia - Salvador",
+    "name": "Boia",
+    "city": "Salvador",
     "votes": null,
     "description": "No coração de Salvador, no Horto Florestal, o restaurante Boia é um convite a explorar a gastronomia litorânea com um toque contemporâneo. Sob a batuta do chef Kaywa Hilton, a casa celebra os frutos do mar frescos e os ingredientes locais, criando pratos com sabores inusitados e apresentações criativas. O ambiente, sofisticado e descontraído, conta com um jardim arborizado e detalhes artísticos, como o mural de Bel Borba. Após três anos na Pituba, o Boia agora traz sua experiência renovada ao Horto, continuando a honra da culinária baiana com o compromisso da sustentabilidade.",
     "service": "Serviço: Rua José Avena,01 - Horto Florestal - Salvador. Reservas: (71) 99694-2630. Horário de funcionamento: terça a sábado, das 12h às 16h e das 18h30 às 23h; domingo, das 12h às 16h.",
     "imageUrl": "https://classic.exame.com/wp-content/uploads/2025/04/boia-Restaurante-Boia_Peixe-do-dia_credito-Divulgacao-1.jpg",
     "cuisine": "Brasileira",
     "price": "$$$$",
-    "neighborhood": "Boia - Salvador"
+    "neighborhood": "Horto Florestal"
   },
   {
     "rank": 62,
